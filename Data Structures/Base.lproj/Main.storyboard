@@ -91,11 +91,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BI2-wS-2JF">
+                                <rect key="frame" x="86" y="405" width="428" height="71"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="rjI-YF-Zzb" secondAttribute="centerX" id="DZi-Bu-BuK"/>
+                            <constraint firstAttribute="centerX" secondItem="BI2-wS-2JF" secondAttribute="centerX" id="Ged-5Y-s4I"/>
                             <constraint firstAttribute="bottom" secondItem="KYU-Wx-21j" secondAttribute="bottom" id="cIU-Rn-v1q"/>
+                            <constraint firstItem="BI2-wS-2JF" firstAttribute="width" secondItem="rjI-YF-Zzb" secondAttribute="width" id="sWT-81-kN0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cra-N8-TIN">
@@ -104,9 +112,6 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="YZY-on-rSg">
                                 <rect key="frame" x="484" y="4" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                                 <connections>
                                     <action selector="createNode:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="ZfN-yX-dWT"/>
                                 </connections>
@@ -115,6 +120,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="answerTraversal" destination="rjI-YF-Zzb" id="czN-9s-dX9"/>
+                        <outlet property="labelAnswer" destination="BI2-wS-2JF" id="UbT-Qy-4US"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>

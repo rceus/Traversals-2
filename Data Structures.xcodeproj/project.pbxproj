@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3264D8291B30A2EB002BF57A /* libFlurry_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 329933701B3087380069A8CF /* libFlurry_6.4.0.a */; };
-		3264D82A1B30A302002BF57A /* libFlurryAds_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3299337D1B3087380069A8CF /* libFlurryAds_6.4.0.a */; };
 		3264D82C1B30A3F6002BF57A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3264D82B1B30A3F6002BF57A /* Security.framework */; };
 		3264D82E1B30A3FE002BF57A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3264D82D1B30A3FE002BF57A /* SystemConfiguration.framework */; };
 		326AD6C81B2B415000346958 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 326AD6C71B2B415000346958 /* DetailViewController.m */; };
@@ -23,6 +21,15 @@
 		328E09101B2A49AE0071BECC /* EdgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 328E090F1B2A49AE0071BECC /* EdgeButton.m */; };
 		329933981B308AA20069A8CF /* GraphButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 329933971B308AA20069A8CF /* GraphButton.m */; };
 		32DC8EEB1B2F7EC10069DE4E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DC8EEA1B2F7EC10069DE4E /* Icon.png */; };
+		32E9DAAA1B30BE1A003CD38D /* libFlurry_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 329933701B3087380069A8CF /* libFlurry_6.4.0.a */; };
+		32E9DAAB1B30BE2A003CD38D /* libFlurryAds_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3299337D1B3087380069A8CF /* libFlurryAds_6.4.0.a */; };
+		32E9DAAD1B30D6E6003CD38D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAAC1B30D6E6003CD38D /* AdSupport.framework */; };
+		32E9DAAF1B30D6ED003CD38D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAAE1B30D6ED003CD38D /* CoreGraphics.framework */; };
+		32E9DAB11B30D6F6003CD38D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAB01B30D6F6003CD38D /* Foundation.framework */; };
+		32E9DAB31B30D6FF003CD38D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAB21B30D6FF003CD38D /* MediaPlayer.framework */; };
+		32E9DAB51B30D708003CD38D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAB41B30D708003CD38D /* StoreKit.framework */; };
+		32E9DAB71B30D713003CD38D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAB61B30D713003CD38D /* UIKit.framework */; };
+		32E9DAB91B30D7CD003CD38D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAB81B30D7CD003CD38D /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +83,13 @@
 		329933961B308AA20069A8CF /* GraphButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphButton.h; sourceTree = "<group>"; };
 		329933971B308AA20069A8CF /* GraphButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphButton.m; sourceTree = "<group>"; };
 		32DC8EEA1B2F7EC10069DE4E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		32E9DAAC1B30D6E6003CD38D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		32E9DAAE1B30D6ED003CD38D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		32E9DAB01B30D6F6003CD38D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		32E9DAB21B30D6FF003CD38D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		32E9DAB41B30D708003CD38D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		32E9DAB61B30D713003CD38D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		32E9DAB81B30D7CD003CD38D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +97,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32E9DAB91B30D7CD003CD38D /* libz.dylib in Frameworks */,
+				32E9DAB71B30D713003CD38D /* UIKit.framework in Frameworks */,
+				32E9DAB51B30D708003CD38D /* StoreKit.framework in Frameworks */,
+				32E9DAB31B30D6FF003CD38D /* MediaPlayer.framework in Frameworks */,
+				32E9DAB11B30D6F6003CD38D /* Foundation.framework in Frameworks */,
+				32E9DAAF1B30D6ED003CD38D /* CoreGraphics.framework in Frameworks */,
+				32E9DAAD1B30D6E6003CD38D /* AdSupport.framework in Frameworks */,
+				32E9DAAB1B30BE2A003CD38D /* libFlurryAds_6.4.0.a in Frameworks */,
+				32E9DAAA1B30BE1A003CD38D /* libFlurry_6.4.0.a in Frameworks */,
 				3264D82E1B30A3FE002BF57A /* SystemConfiguration.framework in Frameworks */,
 				3264D82C1B30A3F6002BF57A /* Security.framework in Frameworks */,
-				3264D82A1B30A302002BF57A /* libFlurryAds_6.4.0.a in Frameworks */,
-				3264D8291B30A2EB002BF57A /* libFlurry_6.4.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +124,13 @@
 		328E08D61B2A48A70071BECC = {
 			isa = PBXGroup;
 			children = (
+				32E9DAB81B30D7CD003CD38D /* libz.dylib */,
+				32E9DAB61B30D713003CD38D /* UIKit.framework */,
+				32E9DAB41B30D708003CD38D /* StoreKit.framework */,
+				32E9DAB21B30D6FF003CD38D /* MediaPlayer.framework */,
+				32E9DAB01B30D6F6003CD38D /* Foundation.framework */,
+				32E9DAAE1B30D6ED003CD38D /* CoreGraphics.framework */,
+				32E9DAAC1B30D6E6003CD38D /* AdSupport.framework */,
 				3264D82D1B30A3FE002BF57A /* SystemConfiguration.framework */,
 				3264D82B1B30A3F6002BF57A /* Security.framework */,
 				328E08E11B2A48A70071BECC /* Data Structures */,
@@ -487,6 +515,10 @@
 					Structures/Flurry,
 					"$(PROJECT_DIR)/Data",
 					Structures/FlurryAds,
+					"$(PROJECT_DIR)/Data",
+					Structures/Flurry,
+					"$(PROJECT_DIR)/Data",
+					Structures/FlurryAds,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -500,6 +532,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Data",
+					Structures/Flurry,
+					"$(PROJECT_DIR)/Data",
+					Structures/FlurryAds,
 					"$(PROJECT_DIR)/Data",
 					Structures/Flurry,
 					"$(PROJECT_DIR)/Data",

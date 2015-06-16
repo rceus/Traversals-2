@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
+#import "flurry.h"
+
 
 @interface AppDelegate ()
 
@@ -18,7 +20,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //Sandeep: 7PRK5GZ4525MMN9KWF9C
+    //Registered: YPGGT9CW3THFH7R5K73V
+    [Flurry startSession:@"7PRK5GZ4525MMN9KWF9C"];
+    [Flurry setDebugLogEnabled:YES];
+
     return YES;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

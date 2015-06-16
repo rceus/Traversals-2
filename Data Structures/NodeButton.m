@@ -49,8 +49,8 @@
 }
 
 - (void)selectedNode{
-    self.layer.borderColor = [UIColor greenColor].CGColor;
-    [self setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    self.layer.borderColor = [UIColor colorWithRed:3/255.0f green:88/255.0f blue:66/255.0f alpha:1.0f].CGColor;
+    [self setTitleColor:[UIColor colorWithRed:3/255.0f green:88/255.0f blue:66/255.0f alpha:1.0f] forState:UIControlStateNormal];
 
 }
 

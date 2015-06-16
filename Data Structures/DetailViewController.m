@@ -49,8 +49,9 @@
     answer = [[NSMutableString alloc]init];
     self.view.backgroundColor = [UIColor blackColor];
     self.answerTraversal.textColor = [UIColor whiteColor];
-
-    if ([_detailItem  isEqual: @"Breadth First Search"]) {
+    self.labelAnswer.textColor = [UIColor whiteColor];
+    self.labelAnswer.text = @"";
+    if ([_detailItem  isEqual: @"Breadth First Search"] || [_detailItem  isEqual: @"Depth First Search"]) {
         self.answerTraversal.text = @"Long Press on Node to Traverse!";
         return;
     }
@@ -59,7 +60,7 @@
 
 
 - (IBAction)createNode:(UIButton *)sender {
-    if ([_detailItem  isEqual: @"Breadth First Search"]) {
+    if ([_detailItem  isEqual: @"Breadth First Search"] || [_detailItem  isEqual: @"Depth First Search"]) {
         [self createGraphNodeButton];
         return;
     }
@@ -87,6 +88,7 @@
     [self.view addSubview:touchButton];
     touchButton.tag = currentCount;
     touchButton.identifier = (int) currentCount;
+    [nodeList addObject:touchButton];
     currentCount++;
 }
 
@@ -149,7 +151,7 @@
     
     NSLog(@"Double Tapped: %@", sender.view);
     
-    if ([_detailItem  isEqual: @"Breadth First Search"]) {
+    if ([_detailItem  isEqual: @"Breadth First Search"] || [_detailItem isEqual: @"Depth First Search"]) {
         if (selectedGraphNode == nil) {
             [(GraphButton*)sender.view selectedNode];
             selectedGraphNode = (GraphButton*)sender.view;
@@ -392,6 +394,13 @@
                                           userInfo:@(i)
                                            repeats:NO];
     }
+    
+    NSString *answer = [[NSString alloc] init];
+    for (int i = 0; i < inOrder.count; i++) {
+        answer = [answer stringByAppendingString:[NSString stringWithFormat:@" %d ", ((NodeButton*)inOrder[i]).identifier]];
+    }
+    self.labelAnswer.text = answer;
+
 }
 
 - (void) performPreorder{
@@ -403,6 +412,13 @@
                                           userInfo:@(i)
                                            repeats:NO];
     }
+    
+    NSString *answer = [[NSString alloc] init];
+    for (int i = 0; i < preOrder.count; i++) {
+        answer = [answer stringByAppendingString:[NSString stringWithFormat:@" %d ", ((NodeButton*)preOrder[i]).identifier]];
+    }
+    self.labelAnswer.text = answer;
+
 }
 
 - (void) performPostorder{
@@ -414,6 +430,13 @@
                                           userInfo:@(i)
                                            repeats:NO];
     }
+    
+    NSString *answer = [[NSString alloc] init];
+    for (int i = 0; i < postOrder.count; i++) {
+        answer = [answer stringByAppendingString:[NSString stringWithFormat:@" %d ", ((NodeButton*)postOrder[i]).identifier]];
+    }
+    self.labelAnswer.text = answer;
+
 
 }
 
@@ -448,12 +471,28 @@
     [self preOrderTraversalFrom:root For:preOrder];
     [self inOrderTraversalFrom:root For:inOrder];
     for (int i = 0; i < postOrder.count; i++) {
-        [NSTimer    scheduledTimerWithTimeInterval:i*5
+        [NSTimer    scheduledTimerWithTimeInterval:i*3
                                             target:self
                                           selector:@selector(colorAll:)
                                           userInfo:@(i)
                                            repeats:NO];
     }
+    
+    NSString *answer = [[NSString alloc] init];
+    answer = [answer stringByAppendingString:@"Post:"];
+    for (int i = 0; i < postOrder.count; i++) {
+        answer = [answer stringByAppendingString:[NSString stringWithFormat:@" %d ", ((NodeButton*)postOrder[i]).identifier]];
+    }
+    answer = [answer stringByAppendingString:@"\rIn:"];
+    for (int i = 0; i < inOrder.count; i++) {
+        answer = [answer stringByAppendingString:[NSString stringWithFormat:@" %d ", ((NodeButton*)inOrder[i]).identifier]];
+    }
+    answer = [answer stringByAppendingString:@"\rPre:"];
+    for (int i = 0; i < preOrder.count; i++) {
+        answer = [answer stringByAppendingString:[NSString stringWithFormat:@" %d ", ((NodeButton*)preOrder[i]).identifier]];
+    }
+    self.labelAnswer.text = answer;
+
 }
 
 - (void)inOrderTraversalFrom:(NodeButton*)nodeButton For:(NSMutableArray*)inOrderArray{
@@ -503,10 +542,9 @@
     }
 }
 
-////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// BFS ////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-- (void)colorBFS:(NSTimer*)timer{
+
+- (void)colorGraph:(NSTimer*)timer{
     NSLog(@"");
     int index = [timer.userInfo intValue];
     if (index > 0) {
@@ -517,27 +555,40 @@
 }
 
 - (void)userLongPressedGraph:(UILongPressGestureRecognizer*)longPress{
-    NSLog(@"Long Pressed");
     if (longPress.state == UIGestureRecognizerStateEnded) {
         NSLog(@"UIGestureRecognizerStateEnded");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message"
-                                                        message:@"Performing Breadth First Search Now."
+                                                        message:@"Performing Graph Algorithm."
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
     }
     
-    [self breadthFirstSearchOnNode:(GraphButton*)longPress.view andAnswer:BFS];
+    [self refreshNodes];
+    
+    if ([_detailItem  isEqual: @"Breadth First Search"]) {
+        [self breadthFirstSearchOnNode:(GraphButton*)longPress.view andAnswer:BFS];
+    } else {
+        [self depthFirstSearchOnNode:(GraphButton*)longPress.view andAnswer:BFS];
+    }
+    
     NSLog(@"%@", BFS);
     
+    
     for (int i = 0; i < BFS.count; i++) {
-        [NSTimer    scheduledTimerWithTimeInterval:i*5
+        [NSTimer    scheduledTimerWithTimeInterval:i*3
                                             target:self
-                                          selector:@selector(colorBFS:)
+                                          selector:@selector(colorGraph:)
                                           userInfo:@(i)
                                            repeats:NO];
     }
+    
+    NSString *answer = [[NSString alloc] init];
+    for (int i = 0; i < BFS.count; i++) {
+        answer = [answer stringByAppendingString:[NSString stringWithFormat:@" %d ", ((GraphButton*)BFS[i]).identifier]];
+    }
+    self.labelAnswer.text = answer;
     
 }
 
@@ -547,8 +598,10 @@
     while (BFSQueue.count > 0) {
         
         GraphButton *tempNode = [BFSQueue objectAtIndex:0];
+        if (tempNode.visited == NO) {
+            [BFSAnswer addObject:tempNode];
+        }
         tempNode.visited = YES;
-        [BFSAnswer addObject:tempNode];
         
         [BFSQueue removeObjectAtIndex:0];
         
@@ -562,6 +615,33 @@
         }
     }
 }
+
+- (void)depthFirstSearchOnNode:(GraphButton*)startNode andAnswer:(NSMutableArray*)BFSAnswer{
+    NSMutableArray * DFSStack = [[NSMutableArray alloc] init];
+    [DFSStack addObject:startNode];
+    while (DFSStack.count > 0) {
+        
+        GraphButton *tempNode = [DFSStack lastObject];
+        
+        if (tempNode.visited == YES) {
+            continue;
+        }
+        tempNode.visited = YES;
+        [BFSAnswer addObject:tempNode];
+        
+        [DFSStack removeLastObject];
+        
+        NSLog(@"%d", tempNode.identifier);
+        NSLog(@"%lu", (unsigned long)tempNode.friends.count);
+        for (int i = 0; i < tempNode.friends.count; i++) {
+            GraphButton *friendNode = tempNode.friends[i];
+            if (friendNode.visited == NO) {
+                [DFSStack addObject:friendNode];
+            }
+        }
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

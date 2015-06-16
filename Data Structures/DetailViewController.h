@@ -21,6 +21,7 @@
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @property (strong, nonatomic) NSMutableDictionary *graphList;
+@property (weak, nonatomic) IBOutlet UILabel *labelAnswer;
 
 @end
 

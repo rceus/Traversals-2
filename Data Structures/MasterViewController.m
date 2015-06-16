@@ -8,9 +8,6 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
-#import "flurry.h"
-#import "FlurryAdInterstitial.h"
-#import "FlurryAdInterstitialDelegate.h"
 
 @interface MasterViewController ()
 
@@ -27,9 +24,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [Flurry startSession:@"YPGGT9CW3THFH7R5K73V"];
     // Do any additional setup after loading the view, typically from a nib.
     traversalOptions = [NSArray  arrayWithObjects:@"In-Order Traversal", @"Pre-Order Traversal", @"Post-Order Traversal", @"Comparison of Tree Traversals", @"Breadth First Search", nil];
+    
+    FlurryAdBanner *adBanner = [[FlurryAdBanner alloc] initWithSpace:@"CPC_iOS_Banner"];
+    adBanner.adDelegate = self;
+    [adBanner fetchAndDisplayAdInView:self.view viewControllerForPresentation:self];
+    
+//    FlurryAdInterstitial *adInterstitial = [[FlurryAdInterstitial alloc]initWithSpace:@"INTERSTITIAL_MAIN_VC"];
+//    adInterstitial.adDelegate = self;
+//    adInterstitial.targeting = [FlurryAdTargeting targeting];
+//    [adInterstitial fetchAd];
 }
 
 - (void)didReceiveMemoryWarning {
