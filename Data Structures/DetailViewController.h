@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "flurry.h"
+#import "FlurryAdInterstitial.h"
+#import "FlurryAdInterstitialDelegate.h"
+#import "FlurryAdBanner.h"
+#import "FlurryAdBannerDelegate.h"
 
 @protocol UILongPressNodeButton <NSObject>
 
@@ -16,7 +21,7 @@
 @end
 
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <FlurryAdInterstitialDelegate, FlurryAdBannerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *answerTraversal;
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;

@@ -22,7 +22,6 @@
     NodeButton* selectedNodeOne;
     GraphButton* selectedGraphNode;
     NSMutableArray *inOrder, *preOrder, *postOrder, *BFS;
-    NSMutableString *answer;
 }
 
 #pragma mark - Managing the detail item
@@ -39,6 +38,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    FlurryAdBanner *adBanner = [[FlurryAdBanner alloc] initWithSpace:@"Banner"];
+    adBanner.adDelegate = self;
+    [adBanner fetchAndDisplayAdInView:self.view viewControllerForPresentation:self];
+
     [self configureView];
     currentCount = 0;
     nodeList = [[NSMutableArray alloc] init];
@@ -46,7 +50,6 @@
     preOrder = [[NSMutableArray alloc]init];
     postOrder = [[NSMutableArray alloc]init];
     BFS = [[NSMutableArray alloc]init];
-    answer = [[NSMutableString alloc]init];
     self.view.backgroundColor = [UIColor blackColor];
     self.answerTraversal.textColor = [UIColor whiteColor];
     self.labelAnswer.textColor = [UIColor whiteColor];
@@ -566,16 +569,11 @@
     }
     
     [self refreshNodes];
-    
     if ([_detailItem  isEqual: @"Breadth First Search"]) {
         [self breadthFirstSearchOnNode:(GraphButton*)longPress.view andAnswer:BFS];
     } else {
         [self depthFirstSearchOnNode:(GraphButton*)longPress.view andAnswer:BFS];
     }
-    
-    NSLog(@"%@", BFS);
-    
-    
     for (int i = 0; i < BFS.count; i++) {
         [NSTimer    scheduledTimerWithTimeInterval:i*3
                                             target:self
@@ -583,28 +581,23 @@
                                           userInfo:@(i)
                                            repeats:NO];
     }
-    
     NSString *answer = [[NSString alloc] init];
     for (int i = 0; i < BFS.count; i++) {
         answer = [answer stringByAppendingString:[NSString stringWithFormat:@" %d ", ((GraphButton*)BFS[i]).identifier]];
     }
     self.labelAnswer.text = answer;
-    
 }
 
 - (void)breadthFirstSearchOnNode:(GraphButton*)startNode andAnswer:(NSMutableArray*)BFSAnswer{
     NSMutableArray * BFSQueue = [[NSMutableArray alloc] init];
     [BFSQueue addObject:startNode];
     while (BFSQueue.count > 0) {
-        
         GraphButton *tempNode = [BFSQueue objectAtIndex:0];
         if (tempNode.visited == NO) {
             [BFSAnswer addObject:tempNode];
         }
         tempNode.visited = YES;
-        
         [BFSQueue removeObjectAtIndex:0];
-        
         NSLog(@"%d", tempNode.identifier);
         NSLog(@"%lu", (unsigned long)tempNode.friends.count);
         for (int i = 0; i < tempNode.friends.count; i++) {
@@ -620,17 +613,13 @@
     NSMutableArray * DFSStack = [[NSMutableArray alloc] init];
     [DFSStack addObject:startNode];
     while (DFSStack.count > 0) {
-        
         GraphButton *tempNode = [DFSStack lastObject];
-        
         if (tempNode.visited == YES) {
             continue;
         }
         tempNode.visited = YES;
         [BFSAnswer addObject:tempNode];
-        
         [DFSStack removeLastObject];
-        
         NSLog(@"%d", tempNode.identifier);
         NSLog(@"%lu", (unsigned long)tempNode.friends.count);
         for (int i = 0; i < tempNode.friends.count; i++) {
@@ -641,7 +630,6 @@
         }
     }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -21,8 +21,6 @@
 		328E09101B2A49AE0071BECC /* EdgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 328E090F1B2A49AE0071BECC /* EdgeButton.m */; };
 		329933981B308AA20069A8CF /* GraphButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 329933971B308AA20069A8CF /* GraphButton.m */; };
 		32DC8EEB1B2F7EC10069DE4E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DC8EEA1B2F7EC10069DE4E /* Icon.png */; };
-		32E9DAAA1B30BE1A003CD38D /* libFlurry_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 329933701B3087380069A8CF /* libFlurry_6.4.0.a */; };
-		32E9DAAB1B30BE2A003CD38D /* libFlurryAds_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3299337D1B3087380069A8CF /* libFlurryAds_6.4.0.a */; };
 		32E9DAAD1B30D6E6003CD38D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAAC1B30D6E6003CD38D /* AdSupport.framework */; };
 		32E9DAAF1B30D6ED003CD38D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAAE1B30D6ED003CD38D /* CoreGraphics.framework */; };
 		32E9DAB11B30D6F6003CD38D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAB01B30D6F6003CD38D /* Foundation.framework */; };
@@ -30,6 +28,8 @@
 		32E9DAB51B30D708003CD38D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAB41B30D708003CD38D /* StoreKit.framework */; };
 		32E9DAB71B30D713003CD38D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAB61B30D713003CD38D /* UIKit.framework */; };
 		32E9DAB91B30D7CD003CD38D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAB81B30D7CD003CD38D /* libz.dylib */; };
+		32E9DABA1B30EBC0003CD38D /* libFlurry_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 329933701B3087380069A8CF /* libFlurry_6.4.0.a */; };
+		32E9DABB1B30EBCC003CD38D /* libFlurryAds_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3299337D1B3087380069A8CF /* libFlurryAds_6.4.0.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32E9DABB1B30EBCC003CD38D /* libFlurryAds_6.4.0.a in Frameworks */,
+				32E9DABA1B30EBC0003CD38D /* libFlurry_6.4.0.a in Frameworks */,
 				32E9DAB91B30D7CD003CD38D /* libz.dylib in Frameworks */,
 				32E9DAB71B30D713003CD38D /* UIKit.framework in Frameworks */,
 				32E9DAB51B30D708003CD38D /* StoreKit.framework in Frameworks */,
@@ -104,8 +106,6 @@
 				32E9DAB11B30D6F6003CD38D /* Foundation.framework in Frameworks */,
 				32E9DAAF1B30D6ED003CD38D /* CoreGraphics.framework in Frameworks */,
 				32E9DAAD1B30D6E6003CD38D /* AdSupport.framework in Frameworks */,
-				32E9DAAB1B30BE2A003CD38D /* libFlurryAds_6.4.0.a in Frameworks */,
-				32E9DAAA1B30BE1A003CD38D /* libFlurry_6.4.0.a in Frameworks */,
 				3264D82E1B30A3FE002BF57A /* SystemConfiguration.framework in Frameworks */,
 				3264D82C1B30A3F6002BF57A /* Security.framework in Frameworks */,
 			);
@@ -519,6 +519,10 @@
 					Structures/Flurry,
 					"$(PROJECT_DIR)/Data",
 					Structures/FlurryAds,
+					"$(PROJECT_DIR)/Data",
+					Structures/Flurry,
+					"$(PROJECT_DIR)/Data",
+					Structures/FlurryAds,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -532,6 +536,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Data",
+					Structures/Flurry,
+					"$(PROJECT_DIR)/Data",
+					Structures/FlurryAds,
 					"$(PROJECT_DIR)/Data",
 					Structures/Flurry,
 					"$(PROJECT_DIR)/Data",

@@ -27,9 +27,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     traversalOptions = [NSArray  arrayWithObjects:@"In-Order Traversal", @"Pre-Order Traversal", @"Post-Order Traversal", @"Comparison of Tree Traversals", @"Breadth First Search", nil];
     
-    FlurryAdBanner *adBanner = [[FlurryAdBanner alloc] initWithSpace:@"CPC_iOS_Banner"];
-    adBanner.adDelegate = self;
-    [adBanner fetchAndDisplayAdInView:self.view viewControllerForPresentation:self];
+//    FlurryAdBanner *adBanner = [[FlurryAdBanner alloc] initWithSpace:@"CPC_iOS_Banner"];
+//    adBanner.adDelegate = self;
+//    [adBanner fetchAndDisplayAdInView:self.view viewControllerForPresentation:self];
     
 //    FlurryAdInterstitial *adInterstitial = [[FlurryAdInterstitial alloc]initWithSpace:@"INTERSTITIAL_MAIN_VC"];
 //    adInterstitial.adDelegate = self;

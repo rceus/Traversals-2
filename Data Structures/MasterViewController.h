@@ -10,7 +10,6 @@
 #import "FlurryAdInterstitialDelegate.h"
 #import "FlurryAdBanner.h"
 #import "FlurryAdBannerDelegate.h"
-
 #import <UIKit/UIKit.h>
 
 @interface MasterViewController : UITableViewController <FlurryAdBannerDelegate, FlurryAdInterstitialDelegate>
