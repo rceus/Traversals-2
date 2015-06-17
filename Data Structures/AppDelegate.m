@@ -22,7 +22,7 @@
     // Override point for customization after application launch.
     //Sandeep: 7PRK5GZ4525MMN9KWF9C
     //Registered: YPGGT9CW3THFH7R5K73V
-    [Flurry startSession:@"7PRK5GZ4525MMN9KWF9C"];
+    [Flurry startSession:@"YPGGT9CW3THFH7R5K73V"];
     [Flurry setDebugLogEnabled:YES];
 
     return YES;

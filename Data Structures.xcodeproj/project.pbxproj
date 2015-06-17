@@ -28,8 +28,8 @@
 		32E9DAB51B30D708003CD38D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAB41B30D708003CD38D /* StoreKit.framework */; };
 		32E9DAB71B30D713003CD38D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAB61B30D713003CD38D /* UIKit.framework */; };
 		32E9DAB91B30D7CD003CD38D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E9DAB81B30D7CD003CD38D /* libz.dylib */; };
-		32E9DABA1B30EBC0003CD38D /* libFlurry_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 329933701B3087380069A8CF /* libFlurry_6.4.0.a */; };
-		32E9DABB1B30EBCC003CD38D /* libFlurryAds_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3299337D1B3087380069A8CF /* libFlurryAds_6.4.0.a */; };
+		32F685BA1B31D90B004385E7 /* libFlurry_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 329933701B3087380069A8CF /* libFlurry_6.4.0.a */; };
+		32F685BB1B31D917004385E7 /* libFlurryAds_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3299337D1B3087380069A8CF /* libFlurryAds_6.4.0.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32E9DABB1B30EBCC003CD38D /* libFlurryAds_6.4.0.a in Frameworks */,
-				32E9DABA1B30EBC0003CD38D /* libFlurry_6.4.0.a in Frameworks */,
+				32F685BB1B31D917004385E7 /* libFlurryAds_6.4.0.a in Frameworks */,
+				32F685BA1B31D90B004385E7 /* libFlurry_6.4.0.a in Frameworks */,
 				32E9DAB91B30D7CD003CD38D /* libz.dylib in Frameworks */,
 				32E9DAB71B30D713003CD38D /* UIKit.framework in Frameworks */,
 				32E9DAB51B30D708003CD38D /* StoreKit.framework in Frameworks */,
@@ -523,6 +523,10 @@
 					Structures/Flurry,
 					"$(PROJECT_DIR)/Data",
 					Structures/FlurryAds,
+					"$(PROJECT_DIR)/Data",
+					Structures/Flurry,
+					"$(PROJECT_DIR)/Data",
+					Structures/FlurryAds,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -536,6 +540,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Data",
+					Structures/Flurry,
+					"$(PROJECT_DIR)/Data",
+					Structures/FlurryAds,
 					"$(PROJECT_DIR)/Data",
 					Structures/Flurry,
 					"$(PROJECT_DIR)/Data",

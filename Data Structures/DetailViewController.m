@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    FlurryAdBanner *adBanner = [[FlurryAdBanner alloc] initWithSpace:@"Banner"];
+    FlurryAdBanner *adBanner = [[FlurryAdBanner alloc] initWithSpace:@"Rishabh Jain"];
     adBanner.adDelegate = self;
     [adBanner fetchAndDisplayAdInView:self.view viewControllerForPresentation:self];
 
